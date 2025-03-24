@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectExchangeProducer", "DirectExchangePublisher\DirectExchangeProducer.csproj", "{1D921BCB-BAB0-4EBC-BFA6-9118DE63AEA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectExchangeConsumer", "DirectExchangeConsumer\DirectExchangeConsumer.csproj", "{E01DC468-93E5-426A-917F-CF033E7AF9C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D921BCB-BAB0-4EBC-BFA6-9118DE63AEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D921BCB-BAB0-4EBC-BFA6-9118DE63AEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D921BCB-BAB0-4EBC-BFA6-9118DE63AEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D921BCB-BAB0-4EBC-BFA6-9118DE63AEA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01DC468-93E5-426A-917F-CF033E7AF9C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01DC468-93E5-426A-917F-CF033E7AF9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01DC468-93E5-426A-917F-CF033E7AF9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01DC468-93E5-426A-917F-CF033E7AF9C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2662D4B-F9C6-4269-981D-4EDF6A3C998C}
+	EndGlobalSection
+EndGlobal
