@@ -23,7 +23,7 @@ class Program
             Console.WriteLine("Write a log message: ");
             var logMessage = Console.ReadLine();
 
-            if (logMessage is null || logMessage.Equals("quit"))
+            if (string.IsNullOrEmpty(logMessage) || logMessage.Equals("quit"))
                 break;
 
             Console.WriteLine("Chose the severity of the log message: ");
