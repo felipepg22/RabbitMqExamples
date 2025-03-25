@@ -20,6 +20,8 @@ class Program
 
         var queueName = routingKey + "_queue";
 
+        await channel.QueueDeclareAsync(queueName, false, false, false ,null);
+
         // Declare Direct Exchange
         await channel.ExchangeDeclareAsync(exchange: exchangeName, type: ExchangeType.Direct);
 
