@@ -16,13 +16,15 @@ class Program
         var queueResult = await channel.QueueDeclareAsync();
 
         Console.WriteLine("Type routing key: ");
-        var routingKey = Console.ReadLine();       
+        var routingKey = Console.ReadLine();
+
+        var queueName = routingKey + "_queue";
 
         // Declare Direct Exchange
         await channel.ExchangeDeclareAsync(exchange: exchangeName, type: ExchangeType.Direct);
 
         // Bind Queue to Exchange with Routing Key
-        await channel.QueueBindAsync(queue: queueResult.QueueName,
+        await channel.QueueBindAsync(queue: queueName,
                           exchange: exchangeName,
                           routingKey: routingKey ?? "info");
 
@@ -39,7 +41,7 @@ class Program
             return Task.CompletedTask;
         };       
 
-        await channel.BasicConsumeAsync(queueResult.QueueName, autoAck: true, consumer: consumer);
+        await channel.BasicConsumeAsync(queueName, autoAck: true, consumer: consumer);
         Console.WriteLine(" Press [enter] to exit.");
         Console.ReadLine();
 
