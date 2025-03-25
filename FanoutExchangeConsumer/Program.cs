@@ -12,9 +12,10 @@ class Program
 
         await channel.ExchangeDeclareAsync(exchange: "logs", type: ExchangeType.Fanout);
 
-        var queueName = "logs_queue";
+        var randomNumber = new Random().Next(1, 100);
+        var queueName = "logs_queue" + randomNumber;
 
-        await channel.QueueDeclareAsync(queue: queueName);
+        await channel.QueueDeclareAsync(queue: queueName, false, false, false, null);
 
         await channel.QueueBindAsync(queue: queueName, exchange: "logs", routingKey: string.Empty);
 
