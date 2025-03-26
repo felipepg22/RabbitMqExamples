@@ -1,5 +1,3 @@
-It looks like you have a README file in your repository already. Here is a basic structure for a README file that you can use to expand based on your repository's details:
-
 ```markdown
 # RabbitMqExamples
 
