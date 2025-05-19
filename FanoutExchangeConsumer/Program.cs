@@ -13,15 +13,23 @@ class Program
         await channel.ExchangeDeclareAsync(exchange: "logs", type: ExchangeType.Fanout);
 
         var randomNumber = new Random().Next(1, 100);
-        var queueName = "logs_queue" + randomNumber;
+        var queueName = "logs_queue";
 
-        await channel.QueueDeclareAsync(queue: queueName, false, false, false, null);
+
+
+        await channel.QueueDeclareAsync(queue: queueName, 
+                                        durable: true, 
+                                        exclusive: false, 
+                                        autoDelete: false, 
+                                        null);
 
         await channel.QueueBindAsync(queue: queueName, exchange: "logs", routingKey: string.Empty);
 
         Console.WriteLine(" [*] Waiting for logs.");
 
         var consumer = new AsyncEventingBasicConsumer(channel);
+
+        
 
         consumer.ReceivedAsync += (model, ea) =>
         {
